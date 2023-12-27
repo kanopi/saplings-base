@@ -1,0 +1,103 @@
+name: 'Saplings - Base'
+description: 'Simple base configuration for modern Drupal.'
+type: 'Site'
+install:
+  # Core.
+  - automated_cron
+  - block_content
+  - config
+  - diff
+  - dynamic_page_cache
+  - field_ui
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - path_alias
+  - shortcut
+  - taxonomy
+  - views
+  - views_ui
+  # Contrib.
+  - block_class
+  - critical_css
+  - environment_indicator
+  - environment_indicator_ribbon
+  - easy_breadcrumb
+  - google_tag
+  - menu_link_attributes
+  - pantheon_advanced_page_cache
+  - pathauto
+  - redirect
+  - redirect_404
+  - redis
+  - ultimate_cron
+config:
+  import:
+    # Core.
+    automated_cron: '*'
+    block_content:
+      # Lets bring in the view to list custom blocks.
+      # But not the default custom block itself.
+      - views.view.block_content.yml
+    menu_ui: '*'
+    shortcut: '*'
+    taxonomy:
+      - core.entity_view_mode.taxonomy_term.full
+      - system.action.taxonomy_term_publish_action
+      - system.action.taxonomy_term_unpublish_action
+      - taxonomy.settings
+    views: '*'
+    views_ui: '*'
+    # Contrib.
+    block_class: '*'
+    diff: '*'
+    easy_breadcrumb: '*'
+    environment_indicator: '*'
+    google_tag: '*'
+    menu_link_attributes: '*'
+    pantheon_advanced_page_cache: '*'
+    pathauto: '*'
+    redirect:
+      - redirect.settings
+      - system.action.redirect_delete_action
+      - views.view.redirect
+    redirect_404: '*'
+    simple_sitemap: '*'
+    sitemap: '*'
+    ultimate_cron: '*'
+  actions:
+    # Core.
+    # Sets Cron interval to 0.
+    automated_cron.settings:
+      simple_config_update:
+        interval: 0
+    # Performance
+    system.performance:
+      simple_config_update:
+        cache.page.max_age: 300
+    # Only Admins can register accounts.
+    user.settings:
+      simple_config_update:
+        register: admin_only
+    # Contrib.
+    # Customize Menu item and link attributes.
+    menu_link_attributes.config:
+      simple_config_update:
+        attributes.container_class:
+          label: 'Menu item class'
+          description: 'Add a CSS class to the menu item (li)'
+        attributes.container_id:
+          label: 'Menu item ID'
+          description: 'Add a unique ID to the menu item.'
+        attributes.class:
+          label: 'Menu link class'
+          description: 'Add a CSS class to the menu link (a)'
+        attributes.id:
+          label: 'Menu link ID'
+          description: 'Add a unique ID to the menu link.'
+        attributes.target:
+          label: 'Menu link target'
+          description: 'Set the link to open in the same window or a new one.'
