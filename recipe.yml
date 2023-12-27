@@ -6,7 +6,6 @@ install:
   - automated_cron
   - block_content
   - config
-  - diff
   - dynamic_page_cache
   - field_ui
   - menu_link_content
@@ -23,9 +22,10 @@ install:
   # Contrib.
   - block_class
   - critical_css
+  - diff
+  - easy_breadcrumb
   - environment_indicator
   - environment_indicator_ribbon
-  - easy_breadcrumb
   - google_tag
   - menu_link_attributes
   - pantheon_advanced_page_cache
@@ -33,6 +33,8 @@ install:
   - redirect
   - redirect_404
   - redis
+  - simple_sitemap
+  - sitemap
   - ultimate_cron
 config:
   import:
@@ -42,6 +44,7 @@ config:
       # Lets bring in the view to list custom blocks.
       # But not the default custom block itself.
       - views.view.block_content.yml
+    field_ui: '*'
     menu_ui: '*'
     shortcut: '*'
     taxonomy:
@@ -65,9 +68,9 @@ config:
       - system.action.redirect_delete_action
       - views.view.redirect
     redirect_404: '*'
-    sitemap: '*'
+    simple_sitemap: '*'
+    sitemap: "*"
     ultimate_cron: '*'
-    xmlsitemap: '*'
   actions:
     # Core.
     # Sets Cron interval to 0.
