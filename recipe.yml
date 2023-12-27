@@ -69,7 +69,8 @@ config:
       - views.view.redirect
     redirect_404: '*'
     simple_sitemap: '*'
-    sitemap: "*"
+    sitemap:
+      - sitemap.settings
     ultimate_cron: '*'
   actions:
     # Core.
