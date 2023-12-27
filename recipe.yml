@@ -65,9 +65,9 @@ config:
       - system.action.redirect_delete_action
       - views.view.redirect
     redirect_404: '*'
-    simple_sitemap: '*'
     sitemap: '*'
     ultimate_cron: '*'
+    xmlsitemap: '*'
   actions:
     # Core.
     # Sets Cron interval to 0.
