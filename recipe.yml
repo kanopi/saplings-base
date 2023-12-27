@@ -17,6 +17,7 @@ install:
   - path_alias
   - shortcut
   - taxonomy
+  - tour
   - views
   - views_ui
   # Contrib.
@@ -69,8 +70,7 @@ config:
       - views.view.redirect
     redirect_404: '*'
     simple_sitemap: '*'
-    sitemap:
-      - sitemap.settings
+    sitemap: '*'
     ultimate_cron: '*'
   actions:
     # Core.
