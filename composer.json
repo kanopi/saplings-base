@@ -25,7 +25,7 @@
         "drupal/redis": "^1.5",
         "drupal/simple_sitemap": "^4",
         "drupal/sitemap": "^2.0",
-        "drupal/ultimate_cron": "*",
+        "drupal/ultimate_cron": "*"
     },
     "suggest": {
         "kanopi/gin-admin-experience": "A simple Drupal Recipe for installing and configuring the Gin admin theme and supporting base modules.",
