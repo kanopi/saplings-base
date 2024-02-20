@@ -78,12 +78,16 @@ config:
     automated_cron.settings:
       simple_config_update:
         interval: 0
-    # Performance
+    # Performance.
     system.performance:
       simple_config_update:
         cache.page.max_age: 300
         css.preprocess: true
         js.preprocess: true
+    # Set home page.
+    system.site:
+      simple_config_update:
+        page.front: /node/1
     # Only Admins can register accounts.
     user.settings:
       simple_config_update:
