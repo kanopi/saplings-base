@@ -78,6 +78,10 @@ config:
     automated_cron.settings:
       simple_config_update:
         interval: 0
+    # Turn on error reporting.
+    system.logging:
+      simple_config_update:
+        error_level: some
     # Performance.
     system.performance:
       simple_config_update:
@@ -111,3 +115,24 @@ config:
         attributes.target:
           label: 'Menu link target'
           description: 'Set the link to open in the same window or a new one.'
+    # HTML Sitemap
+    sitemap.settings:
+      simple_config_update:
+        page_title: Sitemap foo
+        plugins.frontpage:
+          enabled: true
+          weight: 0
+          settings:
+            title: ''
+            rss: ''
+          id: frontpage
+          provider: sitemap
+        plugins.menu:main:
+          enabled: true
+          weight: 0
+          settings:
+            title: ''
+            show_disabled: false
+          id: 'menu:main'
+          provider: sitemap
+        include_css: true
