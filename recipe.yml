@@ -78,6 +78,11 @@ config:
     automated_cron.settings:
       simple_config_update:
         interval: 0
+    # Users should not be able to set their own time zone.
+    system.date:
+      simple_config_update:
+        timezone.default: America/New_York
+        user.configurable: false
     # Turn on error reporting.
     system.logging:
       simple_config_update:
