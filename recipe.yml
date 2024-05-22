@@ -102,6 +102,14 @@ config:
       simple_config_update:
         register: admin_only
     # Contrib.
+    # Easy Breadcrumbs.
+    easy_breadcrumb.settings:
+      simple_config_update:
+        # Add Schema.org Breadcrumb markup.
+        add_structured_data_json_ld: true
+        # Remove breadcrumbs when only home appears.
+        # Since we print the page title, this is only the home page.
+        hide_single_home_item: true
     # Customize Menu item and link attributes.
     menu_link_attributes.config:
       simple_config_update:
