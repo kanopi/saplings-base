@@ -18,6 +18,7 @@ install:
   - shortcut
   - taxonomy
   - tour
+  - tour_enhancements
   - views
   - views_ui
   # Contrib.

@@ -25,6 +25,7 @@
         "drupal/redis": "^1.5",
         "drupal/simple_sitemap": "^4",
         "drupal/sitemap": "^2.0",
+        "drupal/tour_enhancements": "*",
         "drupal/ultimate_cron": "*"
     },
     "suggest": {
