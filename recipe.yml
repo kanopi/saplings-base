@@ -74,7 +74,6 @@ config:
     sitemap: '*'
     ultimate_cron: '*'
   actions:
-    # Core.
     # Sets Cron interval to 0.
     automated_cron.settings:
       simple_config_update:
@@ -101,8 +100,9 @@ config:
     # Only Admins can register accounts.
     user.settings:
       simple_config_update:
+        cancel_method: user_cancel_block
         register: admin_only
-    # Contrib.
+        verify_mail: true
     # Easy Breadcrumbs.
     easy_breadcrumb.settings:
       simple_config_update:
@@ -129,10 +129,10 @@ config:
         attributes.target:
           label: 'Menu link target'
           description: 'Set the link to open in the same window or a new one.'
-    # HTML Sitemap
+    # HTML Sitemap.
     sitemap.settings:
       simple_config_update:
-        page_title: Sitemap foo
+        page_title: Sitemap
         plugins.frontpage:
           enabled: true
           weight: 0
@@ -150,3 +150,15 @@ config:
           id: 'menu:main'
           provider: sitemap
         include_css: true
+    # Set some broad permissions.
+    user.role.authenticated:
+      grantPermissions:
+        - 'access content'
+        - 'access help pages'
+        - 'access shortcuts'
+        - 'access user profiles'
+        - 'delete own files'
+        - 'view own unpublished content'
+    user.role.anonymous:
+      grantPermissions:
+        - 'access content'
