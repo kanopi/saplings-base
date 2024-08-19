@@ -90,7 +90,7 @@ config:
     # Performance.
     system.performance:
       simple_config_update:
-        cache.page.max_age: 300
+        cache.page.max_age: 900
         css.preprocess: true
         js.preprocess: true
     # Set home page.
