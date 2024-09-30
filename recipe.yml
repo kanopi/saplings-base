@@ -45,7 +45,7 @@ config:
     block_content:
       # Lets bring in the view to list custom blocks.
       # But not the default custom block itself.
-      - views.view.block_content.yml
+      - views.view.block_content
     field_ui: '*'
     menu_ui: '*'
     shortcut: '*'
