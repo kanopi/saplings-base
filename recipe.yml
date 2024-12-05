@@ -96,13 +96,6 @@ config:
         cancel_method: user_cancel_block
         register: admin_only
         verify_mail: true
-    # Critical CSS.
-    critical_css.settings:
-      simpleConfigUpdate:
-        enabled: true
-        enabled_for_logged_in_users: false
-        preload_non_critical_css: false
-        dir_path: /critical-css/css
     # Easy Breadcrumbs.
     easy_breadcrumb.settings:
       simpleConfigUpdate:
