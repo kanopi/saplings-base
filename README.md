@@ -1,18 +1,33 @@
-# Saplings Base
+![saplings](https://github.com/kanopi/saplings/assets/5177009/a6377e32-deb2-49d8-873a-f3dd5a36fa7c)
 
-## Overview
+# Saplings - Base
 
-Welcome to the Saplings Base repository! This repository contains site-level Drupal configurations for the Saplings application.
+This recipe is designed to configure the basic modules and configuration needed
+to start a Drupal site.
 
 ## Features
 
-- Manages fundamental Drupal configurations at the site level.
-- Provides a foundation for the Saplings application with essential settings and setups.
+Adds and configures the following modules:
 
-## Getting Started
+* Block Class
+* Critical CSS
+* Diff
+* Easy Breadcrumb
+* Google Tag
+* Menu Link Attributes
+* Pathauto
+* Redirect & Redirect 404
+* Simple Sitemap
+* Sitemap
+* Tour
+* Ultimate Cron
 
-To start using Saplings Base, follow these steps:
+In addition, we configure basic Drupal settings for:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kanopi/saplings-base.git
+* Automated Cron
+* System Date
+* System Loggin
+* System Performance
+* Site Home page
+* User Settings
+* User permissions
