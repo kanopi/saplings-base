@@ -12,21 +12,19 @@
     ],
     "require": {
         "drupal/block_class": "^2.0",
+        "drupal/core": ">=10.4",
         "drupal/critical_css": "^1.19",
         "drupal/diff": "^1.1",
         "drupal/easy_breadcrumb": "^2.0",
-        "drupal/environment_indicator": "^4.0",
-        "drupal/environment_indicator_ribbon": "^1.0",
         "drupal/google_tag": "^2.0",
-        "drupal/menu_link_attributes": "*",
-        "drupal/pantheon_advanced_page_cache": "^2.0",
+        "drupal/menu_link_attributes": "^1.5",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.9",
-        "drupal/redis": "^1.5",
         "drupal/simple_sitemap": "^4",
         "drupal/sitemap": "^2.0",
-        "drupal/tour_enhancements": "*",
-        "drupal/ultimate_cron": "*"
+        "drupal/tour": "^2",
+        "drupal/tour_core": "^1",
+        "drupal/ultimate_cron": "^2.0@beta"
     },
     "suggest": {
         "kanopi/gin-admin-experience": "A simple Drupal Recipe for installing and configuring the Gin admin theme and supporting base modules.",
