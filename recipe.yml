@@ -1,6 +1,8 @@
 name: 'Saplings - Base'
 description: 'Simple base configuration for modern Drupal.'
 type: 'Site'
+recipes:
+  - tour_core
 install:
   # Core.
   - automated_cron
@@ -17,8 +19,6 @@ install:
   - path_alias
   - shortcut
   - taxonomy
-  - tour
-  - tour_enhancements
   - views
   - views_ui
   # Contrib.
@@ -26,86 +26,86 @@ install:
   - critical_css
   - diff
   - easy_breadcrumb
-  - environment_indicator
-  - environment_indicator_ribbon
   - google_tag
   - menu_link_attributes
-  - pantheon_advanced_page_cache
   - pathauto
   - redirect
   - redirect_404
-  - redis
   - simple_sitemap
   - sitemap
+  - tour
   - ultimate_cron
 config:
+  # Any configs that already exist will be skipped.
+  strict: false
   import:
     # Core.
-    automated_cron: '*'
     block_content:
       # Lets bring in the view to list custom blocks.
       # But not the default custom block itself.
       - views.view.block_content
-    field_ui: '*'
-    menu_ui: '*'
     shortcut: '*'
     taxonomy:
+      # Not bringing in the Taxonomy view.
       - core.entity_view_mode.taxonomy_term.full
       - system.action.taxonomy_term_publish_action
       - system.action.taxonomy_term_unpublish_action
       - taxonomy.settings
-    views: '*'
-    views_ui: '*'
     # Contrib.
-    block_class: '*'
+    # Import diff entity view mode.
     diff: '*'
-    easy_breadcrumb: '*'
-    environment_indicator: '*'
-    google_tag: '*'
-    menu_link_attributes: '*'
-    pantheon_advanced_page_cache: '*'
+    # Import Pathauto actions.
     pathauto: '*'
+    # Don't import optional Language config.
     redirect:
       - redirect.settings
       - system.action.redirect_delete_action
       - views.view.redirect
+    # Import Redirect 404 view.
     redirect_404: '*'
     simple_sitemap: '*'
+    # Import Sitemap tour.
     sitemap: '*'
-    ultimate_cron: '*'
   actions:
     # Sets Cron interval to 0.
     automated_cron.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         interval: 0
     # Users should not be able to set their own time zone.
     system.date:
-      simple_config_update:
+      simpleConfigUpdate:
         timezone.default: America/New_York
         timezone.user.configurable: false
     # Turn on error reporting.
     system.logging:
-      simple_config_update:
+      simpleConfigUpdate:
         error_level: some
     # Performance.
     system.performance:
-      simple_config_update:
+      simpleConfigUpdate:
         cache.page.max_age: 900
         css.preprocess: true
         js.preprocess: true
     # Set home page.
     system.site:
-      simple_config_update:
+      simpleConfigUpdate:
         page.front: /node/1
     # Only Admins can register accounts.
     user.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         cancel_method: user_cancel_block
         register: admin_only
         verify_mail: true
+    # Critical CSS.
+    critical_css.settings:
+      simpleConfigUpdate:
+        enabled: true
+        enabled_for_logged_in_users: false
+        preload_non_critical_css: false
+        dir_path: /critical-css/css
     # Easy Breadcrumbs.
     easy_breadcrumb.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         # Add Schema.org Breadcrumb markup.
         add_structured_data_json_ld: true
         # Remove breadcrumbs when only home appears.
@@ -113,7 +113,7 @@ config:
         hide_single_home_item: true
     # Customize Menu item and link attributes.
     menu_link_attributes.config:
-      simple_config_update:
+      simpleConfigUpdate:
         attributes.container_class:
           label: 'Menu item class'
           description: 'Add a CSS class to the menu item (li)'
@@ -129,9 +129,13 @@ config:
         attributes.target:
           label: 'Menu link target'
           description: 'Set the link to open in the same window or a new one.'
+    # Exclude 404s from the log.
+    redirect_404.settings:
+      simpleConfigUpdate:
+        suppress_404: true
     # HTML Sitemap.
     sitemap.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         page_title: Sitemap
         plugins.frontpage:
           enabled: true
@@ -154,10 +158,8 @@ config:
     user.role.authenticated:
       grantPermissions:
         - 'access content'
-        - 'access help pages'
         - 'access shortcuts'
         - 'access user profiles'
         - 'view own unpublished content'
     user.role.anonymous:
-      grantPermissions:
-        - 'access content'
+      grantPermission: 'access content'
