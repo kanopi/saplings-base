@@ -1,8 +1,6 @@
 name: 'Saplings - Base'
 description: 'Simple base configuration for modern Drupal.'
 type: 'Site'
-recipes:
-  - tour_core
 install:
   # Core.
   - automated_cron
