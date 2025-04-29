@@ -24,7 +24,8 @@
         "drupal/sitemap": "^2.0",
         "drupal/tour": "^2",
         "drupal/tour_core": "^1",
-        "drupal/ultimate_cron": "^2.0@beta"
+        "drupal/ultimate_cron": "^2.0@beta",
+        "drupal/views_custom_cache_tag": "^1.4"
     },
     "suggest": {
         "kanopi/gin-admin-experience": "A simple Drupal Recipe for installing and configuring the Gin admin theme and supporting base modules.",

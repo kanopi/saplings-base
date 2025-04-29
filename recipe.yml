@@ -33,6 +33,7 @@ install:
   - sitemap
   - tour
   - ultimate_cron
+  - views_custom_cache_tag
 config:
   # Any configs that already exist will be skipped.
   strict: false
