@@ -12,7 +12,7 @@
     ],
     "require": {
         "drupal/block_class": "^4.0",
-        "drupal/core": ">=10.4",
+        "drupal/core": "^10.4 || ^11",
         "drupal/critical_css": "^1.19",
         "drupal/diff": "^1.1",
         "drupal/easy_breadcrumb": "^2.0",
