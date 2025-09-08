@@ -10,9 +10,11 @@ to start a Drupal site.
 Adds and configures the following modules:
 
 * Block Class
+* Bpmn_io (modeler for ECA, etc.)
 * Critical CSS
 * Diff
 * Easy Breadcrumb
+* ECA
 * Google Tag
 * Menu Link Attributes
 * Pathauto
