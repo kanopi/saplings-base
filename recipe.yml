@@ -23,11 +23,18 @@ install:
   - views_ui
   # Contrib.
   - block_class
+  - bpmn_io
   - critical_css
   - diff
   - easy_breadcrumb
+  - eca
+  - eca_base
+  - eca_content
+  - eca_ui
+  - eca_user
   - google_tag
   - menu_link_attributes
+  - modeler_api
   - pathauto
   - redirect
   - redirect_404
@@ -55,6 +62,8 @@ config:
     # Contrib.
     # Import diff entity view mode.
     diff: '*'
+    # Import eca config.
+    eca: '*'
     # Import Pathauto actions.
     pathauto: '*'
     # Don't import optional Language config.
@@ -67,6 +76,8 @@ config:
     simple_sitemap: '*'
     # Import Sitemap tour.
     sitemap: '*'
+    # Import Ultimate cron config.
+    ultimate_cron: '*'
   actions:
     # Sets Cron interval to 0.
     automated_cron.settings:
